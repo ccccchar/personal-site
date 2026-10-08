@@ -37,8 +37,24 @@ npm run build   # 生成静态文件到 out/
 npm run lint
 ```
 
+## 站点结构
+
+| 路径 | 说明 |
+|------|------|
+| `/` | 首页 |
+| `/about/` | 关于 |
+| `/opensource/` | 开源 |
+| `/skills/` | 技能 |
+| `/writing/` | 文章列表 |
+| `/writing/[slug]/` | 文章详情 |
+| `/timeline/` | 轨迹 |
+
+内容数据：`src/data/`（`site.ts`、`projects.ts`、`articles.ts`、`timeline.ts`、`skills.ts`）。
+
 ## 目录
 
 - `src/app/` — 页面与布局
-- `public/` — 静态资源（含 `.nojekyll`，避免 Pages 误用 Jekyll）
+- `src/components/` — 导航、卡片、时间线等
+- `src/data/` — 站点内容与配置
+- `public/` — 静态资源（含 `.nojekyll`）
 - `.github/workflows/deploy.yml` — CI 部署

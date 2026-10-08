@@ -1,20 +1,19 @@
 import { PageIntro } from "@/components/PageIntro";
 import { EmptyState } from "@/components/EmptyState";
 import { SiteContainer } from "@/components/SiteContainer";
-import { site } from "@/data/site";
-import { skillBlocks } from "@/data/skills";
+import { skillBlocks, skillIntro } from "@/data/skills";
 
 export const metadata = {
-  title: "关于",
+  title: "技能",
 };
 
-export default function AboutPage() {
+export default function SkillsPage() {
   return (
     <>
       <PageIntro
-        eyebrow="About"
-        title="关于"
-        description={site.description || undefined}
+        eyebrow="Skills"
+        title="技能"
+        description={skillIntro || undefined}
       />
       <SiteContainer className="pb-20">
         {skillBlocks.length > 0 ? (
@@ -22,9 +21,9 @@ export default function AboutPage() {
             {skillBlocks.map((block) => (
               <div
                 key={block.title}
-                className="rounded-2xl border border-white/8 bg-white/[0.02] p-6"
+                className="rounded-2xl border border-white/8 p-6"
               >
-                <h2 className="text-base font-semibold text-zinc-100">{block.title}</h2>
+                <h2 className="font-semibold text-zinc-100">{block.title}</h2>
                 <ul className="mt-4 space-y-2 text-sm text-zinc-500">
                   {block.items.map((item) => (
                     <li key={item}>{item}</li>

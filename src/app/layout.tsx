@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { SiteShell } from "@/components/SiteShell";
+import { site } from "@/data/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,8 +15,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Personal Site",
-  description: "Next.js static site on GitHub Pages",
+  title: {
+    default: site.name,
+    template: `%s · ${site.name}`,
+  },
+  description: site.description || undefined,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -23,8 +28,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="zh-CN"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
-        {children}
+      <body className="min-h-full flex flex-col text-zinc-100">
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   );

@@ -1,14 +1,13 @@
 export const site = {
   name: "ccccchar",
-  tagline: "Frontend · Engineering · DX",
-  headline: "把工程习惯，写成可复用的工具与页面",
-  description:
-    "前端方向工程师，关注工程化、开发者体验与可维护的交付。开源小工具、活动页与联调实践。",
+  tagline: "",
+  headline: "",
+  description: "",
   copyright: "ccccchar",
   links: {
-    email: "mailto:hello@example.com",
+    email: "",
     github: "https://github.com/ccccchar",
-    juejin: "https://juejin.cn",
+    juejin: "",
   },
 } as const;
 
