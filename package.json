@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:pages": "NEXT_PUBLIC_BASE_PATH=/personal-site next dev",
     "build": "next build",
+    "build:pages": "NEXT_PUBLIC_BASE_PATH=/personal-site next build",
     "start": "next start",
     "lint": "eslint"
   },
