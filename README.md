@@ -51,6 +51,17 @@ npm run lint
 
 内容数据：`src/data/`（`site.ts`、`projects.ts`、`articles.ts`、`timeline.ts`、`skills.ts`）。
 
+## 液态玻璃对比（三种实现）
+
+| 路径 | 依赖 |
+|------|------|
+| `/glass/` | 演示页：三块可拖动玻璃 |
+| `src/components/glass/css/` | 无（`backdrop-filter`） |
+| `src/components/glass/svg/` | 无（SVG 滤镜） |
+| `src/components/glass/webgl/` | `three`、`@react-three/fiber`、`@react-three/drei` |
+
+导航切换：改 `src/config/glass.ts` 的 `glassNavVariant`（`css` | `svg`）。
+
 ## 目录
 
 - `src/app/` — 页面与布局

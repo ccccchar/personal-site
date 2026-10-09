@@ -1,19 +1,23 @@
 import Link from "next/link";
+import { glassNavVariant } from "@/config/glass";
+import { GlassNavWrapper } from "@/components/glass/GlassNavWrapper";
 import { nav, site } from "@/data/site";
 import { SiteContainer } from "./SiteContainer";
+import { SiteLogo } from "./SiteLogo";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-white/5 bg-[#050508]/70 backdrop-blur-xl">
+    <header className="sticky top-0 z-50">
+      <GlassNavWrapper
+        variant={glassNavVariant}
+        className="border-b border-white/10 bg-[#050508]/40"
+      >
       <SiteContainer className="flex items-center justify-between gap-4 py-4">
         <Link
           href="/"
           className="group flex items-center gap-2 text-sm font-semibold tracking-tight text-zinc-100"
         >
-          <span
-            className="inline-block h-2 w-2 rounded-full bg-gradient-to-br from-violet-400 to-fuchsia-500 shadow-[0_0_12px_rgba(167,139,250,0.6)]"
-            aria-hidden
-          />
+          <SiteLogo size={36} />
           {site.name}
         </Link>
         <nav className="hidden items-center gap-1 sm:flex">
@@ -45,6 +49,7 @@ export function SiteHeader() {
           </Link>
         ))}
       </SiteContainer>
+      </GlassNavWrapper>
     </header>
   );
 }
