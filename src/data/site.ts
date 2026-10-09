@@ -1,5 +1,8 @@
 export const site = {
   name: "ccccchar",
+  logo: "/logo.jpg",
+  faviconPng: "/favicon-48.png",
+  appleTouchIcon: "/apple-touch-icon.png",
   tagline: "",
   headline: "",
   description: "",
@@ -17,4 +20,5 @@ export const nav = [
   { href: "/skills/", label: "技能" },
   { href: "/writing/", label: "文章" },
   { href: "/timeline/", label: "轨迹" },
+  { href: "/glass/", label: "玻璃" },
 ] as const;
