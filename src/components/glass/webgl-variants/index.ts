@@ -1,1 +1,0 @@
-export { GlassWebglVariantsPlayground } from "./GlassWebglVariantsPlayground";

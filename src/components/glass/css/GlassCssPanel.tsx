@@ -34,7 +34,7 @@ export function GlassCssShell({
 }) {
   return (
     <div
-      className={`border border-white/20 bg-white/10 backdrop-blur-xl backdrop-saturate-150 ${className}`}
+      className={`border border-white/20 bg-transparent ${className}`}
     >
       {children}
     </div>

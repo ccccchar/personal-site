@@ -1,54 +1,31 @@
-import Link from "next/link";
-import { glassNavVariant } from "@/config/glass";
+import { fluidFullCanvas, glassNavVariant } from "@/config/glass";
 import { GlassNavWrapper } from "@/components/glass/GlassNavWrapper";
-import { nav, site } from "@/data/site";
-import { SiteContainer } from "./SiteContainer";
-import { SiteLogo } from "./SiteLogo";
+import { FluidTopSphereCanvas } from "@/components/fluid/FluidTopSphereCanvas";
+import { SiteHeaderContent } from "./SiteHeaderContent";
 
 export function SiteHeader() {
+  if (fluidFullCanvas) {
+    return (
+      <header className="sticky top-3 z-50 px-3 sm:px-5">
+        <div
+          data-nav-glass-bar
+          className="relative overflow-hidden rounded-[1.75rem] border border-white/35 shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_10px_30px_rgba(0,0,0,0.18)]"
+        >
+          <div className="pointer-events-none absolute inset-0">
+            <FluidTopSphereCanvas />
+          </div>
+          <div className="relative z-10">
+            <SiteHeaderContent />
+          </div>
+        </div>
+      </header>
+    );
+  }
+
   return (
     <header className="sticky top-0 z-50">
-      <GlassNavWrapper
-        variant={glassNavVariant}
-        className="border-b border-white/10 bg-[#050508]/40"
-      >
-      <SiteContainer className="flex items-center justify-between gap-4 py-4">
-        <Link
-          href="/"
-          className="group flex items-center gap-2 text-sm font-semibold tracking-tight text-zinc-100"
-        >
-          <SiteLogo size={36} />
-          {site.name}
-        </Link>
-        <nav className="hidden items-center gap-1 sm:flex">
-          {nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="rounded-full px-3 py-1.5 text-sm text-zinc-400 transition hover:bg-white/5 hover:text-zinc-100"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-        <Link
-          href="/#contact"
-          className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-zinc-200 transition hover:border-violet-500/40 hover:bg-violet-500/10 sm:text-sm"
-        >
-          联系
-        </Link>
-      </SiteContainer>
-      <SiteContainer className="flex gap-1 overflow-x-auto pb-3 sm:hidden">
-        {nav.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className="shrink-0 rounded-full border border-white/5 px-3 py-1 text-xs text-zinc-400"
-          >
-            {item.label}
-          </Link>
-        ))}
-      </SiteContainer>
+      <GlassNavWrapper variant={glassNavVariant}>
+        <SiteHeaderContent />
       </GlassNavWrapper>
     </header>
   );

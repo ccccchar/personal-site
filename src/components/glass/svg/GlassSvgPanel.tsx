@@ -41,7 +41,7 @@ export function GlassSvgShell({
     <div className={`relative ${className}`}>
       <GlassSvgDefs filterId={filterId} />
       <div
-        className="border border-white/20 bg-white/5 backdrop-blur-md"
+        className="border border-white/20 bg-transparent"
         style={{ filter: `url(#${filterId})` }}
       >
         {children}
