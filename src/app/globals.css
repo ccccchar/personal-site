@@ -10,7 +10,8 @@ html {
 }
 
 body {
-  @apply min-h-full bg-[#050508] text-zinc-100 antialiased;
+  @apply min-h-full text-zinc-100 antialiased;
+  background: linear-gradient(150deg, #3d3558 0%, #6b4a5e 38%, #7a5848 70%, #5c5346 100%);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
 
